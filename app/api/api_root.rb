@@ -7,4 +7,8 @@ class ApiRoot < Grape::API
   get :health do
     { status: 'ok' }
   end
+
+  namespace :weather do
+    mount Weather::Root
+  end
 end
