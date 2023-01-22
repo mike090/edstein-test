@@ -1,4 +1,3 @@
---coler
+--color
 --require spec_helper
 --order rand
---format html

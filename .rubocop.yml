@@ -1,0 +1,52 @@
+---
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.0.2
+  Exclude:
+    - 'bin/**'
+    - 'db/schema.rb'
+    - 'db/migrate/**'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'config/initializers/devise.rb'
+    - 'storage/**'
+    - 'tmp/**/*'
+  SuggestExtensions: false
+
+Rails:
+  Enabled: true
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Lint/RedundantDirGlobSort:
+  Enabled: false
