@@ -29,6 +29,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'grape'
 
+gem 'faraday'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -51,12 +53,13 @@ group :development do
 end
 
 group :test do
-
   gem 'rspec'
 
   gem 'rspec-rails'
 
   gem 'webmock'
+
+  gem 'addressable'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

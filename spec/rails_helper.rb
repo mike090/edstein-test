@@ -63,7 +63,5 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  RSpec.configure do |conf|
-    conf.include RSpec::Rails::RequestExampleGroup, type: :request, file_path: %r{spec/api}
-  end
+  config.include RSpec::Rails::RequestExampleGroup, type: :request, file_path: %r{spec/api}
 end
