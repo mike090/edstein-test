@@ -25,9 +25,9 @@ RSpec.describe AccuweatherAdapter do
     expect(current_t).to eq(expected_t)
   end
 
-  it 'raised DataNotAvailable exception' do
+  it 'raised DataNotAvailableError exception' do
     stub_request(:get, /.*/)
       .to_return(status: 401)
-    expect { described_class.current 123 }.to raise_error AccuweatherAdapter::DataNotAvailable
+    expect { described_class.current 123 }.to raise_error AccuweatherAdapter::DataNotAvailableError
   end
 end

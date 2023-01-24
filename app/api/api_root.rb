@@ -5,6 +5,7 @@ class ApiRoot < Grape::API
 
   desc 'Returns service status'
   get :health do
+    header 'Content-Length', 42.to_s
     { status: 'ok' }
   end
 

@@ -1,0 +1,47 @@
+max_value:
+  location: 1
+  time: <%= (Time.zone.now.ago 3.hours).to_i %>
+  value: 28
+  unit: C
+
+min_value:
+  location: 1
+  time:  <%= (Time.zone.now.ago 18.minutes).to_i %>
+  value: 0
+  unit: C
+
+yesterday_1:
+  location: 1
+  time:  <%= (Time.zone.now.ago 25.hours).to_i %>
+  value: 23
+  unit: C
+
+ten_minutes_ago:
+  location: 1
+  time: <%= (Time.zone.now.ago 10.minutes).to_i %>
+  value: 25
+  unit: C
+
+five_minutes_ago:
+  location: 1
+  time: <%= (Time.zone.now.ago 5.minutes).to_i %>
+  value: 24
+  unit: C
+
+hourly1:
+  location: 1
+  time: <%= Time.zone.now.beginning_of_hour.ago(182.minutes).to_i %>
+  value: 15
+  unit: C
+
+hourly2:
+  location: 1
+  time: <%= Time.zone.now.beginning_of_hour.ago(119.minutes).to_i %>
+  value: 15
+  unit: C
+
+hourly3:
+  location: 1
+  time: <%= Time.zone.now.beginning_of_hour.ago(1.minutes).to_i %>
+  value: 15
+  unit: C

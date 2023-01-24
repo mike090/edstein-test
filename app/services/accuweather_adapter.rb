@@ -50,11 +50,11 @@ class AccuweatherAdapter
         response = connection.get path, { apikey: ENV.fetch('ACCUWEATHER_API_KEY', nil) }
       rescue StandardError => e
         message = e.is_a?(Faraday::ClientError) ? 'Accuweather service error' : 'Accuweather service unavailable'
-        raise DataNotAvailable, message
+        raise DataNotAvailableError, message
       end
       JSON.parse response.body
     end
   end
 
-  class DataNotAvailable < RuntimeError; end
+  class DataNotAvailableError < RuntimeError; end
 end
