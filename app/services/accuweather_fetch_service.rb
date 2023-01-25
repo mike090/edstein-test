@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FetchLast24hService
+class AccuweatherFetchService
   class << self
     def call(location)
       data = AccuweatherAdapter.last_24h(location)
