@@ -66,7 +66,7 @@ module Core
 
       def last_24h(location)
         start = Time.zone.now.beginning_of_hour
-        hours = (0..23).map { |i| (start - i.hour).to_i }
+        hours = (0..23).map { |i| (start.ago i.hours).to_i }
         hours.map do |time|
           by_time location, time
         rescue DataNotAvailableError
