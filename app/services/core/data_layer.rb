@@ -28,7 +28,7 @@ module Core
           }
         end
 
-        raise DataNotAvailable, 'Data not available'
+        raise DataNotAvailableError, 'Data not available'
       end
 
       def last_24h_avg(location)

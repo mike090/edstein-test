@@ -7,38 +7,38 @@ RSpec.describe Core::DataLayer do
 
   describe '.current' do
     it 'returns last record by time' do
-      ti = described_class.current location
+      t_info = described_class.current location
       last = TemperatureInfo.order(:time).last
-      expect(ti[:time].to_i).to eq(last.time)
+      expect(t_info[:time].to_i).to eq(last.time)
     end
   end
 
   describe '.last_24h_min' do
     it 'returns min_value fixture' do
-      ti = described_class.last_24h_min location
-      expect(ti[:time].to_i).to eq temperature_infos(:min_value).time
+      t_info = described_class.last_24h_min location
+      expect(t_info[:time].to_i).to eq temperature_infos(:min_value).time
     end
   end
 
   describe '.last_24h_max' do
     it 'returns max value fixture' do
-      ti = described_class.last_24h_max location
-      expect(ti[:time].to_i).to eq temperature_infos(:max_value).time
+      t_info = described_class.last_24h_max location
+      expect(t_info[:time].to_i).to eq temperature_infos(:max_value).time
     end
   end
 
   describe '.last_24h_avg' do
     it 'returns avg value' do
-      ti = described_class.last_24h_avg location
+      t_info = described_class.last_24h_avg location
       data = TemperatureInfo.where('time > ?', Time.now.ago(24.hours).to_i)
-      expect(ti[:avg_value]).to eq (data.sum(:value) / data.count).round(1)
+      expect(t_info[:avg_value]).to eq (data.sum(:value) / data.count).round(1)
     end
   end
 
   describe '.by_time' do
     it 'returns nearest value' do
-      ti = described_class.by_time location, Time.now.ago(3.minutes).to_i
-      expect(ti[:time].to_i).to eq(temperature_infos(:five_minutes_ago).time)
+      t_info = described_class.by_time location, Time.now.ago(3.minutes).to_i
+      expect(t_info[:time].to_i).to eq(temperature_infos(:five_minutes_ago).time)
     end
   end
 
