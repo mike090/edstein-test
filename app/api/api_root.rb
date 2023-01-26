@@ -5,11 +5,10 @@ class ApiRoot < Grape::API
 
   desc 'Returns service status'
   get :health do
-    header 'Content-Length', 42.to_s
-    { status: 'ok' }
+    { status: 200, message: "I'm ok" }
   end
 
   namespace :weather do
-    mount Weather::Root
+    mount Weather
   end
 end
