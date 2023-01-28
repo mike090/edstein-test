@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dataservice.accuweather.com/currentconditions/v1/123/historical/24?apikey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - ruby-client
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 28 Jan 2023 09:07:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '11704'
+      Connection:
+      - keep-alive
+      Server:
+      - Microsoft-IIS/10.0
+      Ratelimit-Limit:
+      - '50'
+      Ratelimit-Remaining:
+      - '40'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept
+      Access-Control-Max-Age:
+      - '3628800'
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=572
+      Expires:
+      - Sat, 28 Jan 2023 09:16:44 GMT
+      Akamai-Grn:
+      - 0.2d090f17.1674896832.17038150
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - deflate;q=0.6
+      - gzip;q=1.0
+      - identity;q=0.3
+      Host:
+      - api.accuweather.com
+      User-Agent:
+      - ruby-client
+      X-Forwarded-For:
+      - 109.127.184.96
+      X-Forwarded-Port:
+      - '80'
+      X-Forwarded-Proto:
+      - http
+    body:
+      encoding: UTF-8
+      string: '[{"LocalObservationDateTime":"2023-01-28T04:55:00-04:00","EpochTime":1674896100,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":25.0,"Unit":"C","UnitType":17},"Imperial":{"Value":77.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-28T03:55:00-04:00","EpochTime":1674892500,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":25.0,"Unit":"C","UnitType":17},"Imperial":{"Value":77.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-28T02:55:00-04:00","EpochTime":1674888900,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":25.0,"Unit":"C","UnitType":17},"Imperial":{"Value":77.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-28T01:55:00-04:00","EpochTime":1674885300,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":25.0,"Unit":"C","UnitType":17},"Imperial":{"Value":77.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-28T00:55:00-04:00","EpochTime":1674881700,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":26.1,"Unit":"C","UnitType":17},"Imperial":{"Value":79.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T23:55:00-04:00","EpochTime":1674878100,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":25.0,"Unit":"C","UnitType":17},"Imperial":{"Value":77.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T22:55:00-04:00","EpochTime":1674874500,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":26.1,"Unit":"C","UnitType":17},"Imperial":{"Value":79.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T21:55:00-04:00","EpochTime":1674870900,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":26.1,"Unit":"C","UnitType":17},"Imperial":{"Value":79.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T20:55:00-04:00","EpochTime":1674867300,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":26.1,"Unit":"C","UnitType":17},"Imperial":{"Value":79.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T19:55:00-04:00","EpochTime":1674863700,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":26.1,"Unit":"C","UnitType":17},"Imperial":{"Value":79.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T18:55:00-04:00","EpochTime":1674860100,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":27.2,"Unit":"C","UnitType":17},"Imperial":{"Value":81.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T17:55:00-04:00","EpochTime":1674856500,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":27.8,"Unit":"C","UnitType":17},"Imperial":{"Value":82.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T16:55:00-04:00","EpochTime":1674852900,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":28.9,"Unit":"C","UnitType":17},"Imperial":{"Value":84.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T15:55:00-04:00","EpochTime":1674849300,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":27.8,"Unit":"C","UnitType":17},"Imperial":{"Value":82.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T14:55:00-04:00","EpochTime":1674845700,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":28.9,"Unit":"C","UnitType":17},"Imperial":{"Value":84.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T13:55:00-04:00","EpochTime":1674842100,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":28.9,"Unit":"C","UnitType":17},"Imperial":{"Value":84.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T12:55:00-04:00","EpochTime":1674838500,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":27.8,"Unit":"C","UnitType":17},"Imperial":{"Value":82.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T11:55:00-04:00","EpochTime":1674834900,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":28.9,"Unit":"C","UnitType":17},"Imperial":{"Value":84.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T10:55:00-04:00","EpochTime":1674831300,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":27.8,"Unit":"C","UnitType":17},"Imperial":{"Value":82.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T09:55:00-04:00","EpochTime":1674827700,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":27.2,"Unit":"C","UnitType":17},"Imperial":{"Value":81.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T08:55:00-04:00","EpochTime":1674824100,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":26.1,"Unit":"C","UnitType":17},"Imperial":{"Value":79.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T07:55:00-04:00","EpochTime":1674820500,"WeatherText":"Partly
+        sunny","WeatherIcon":3,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":true,"Temperature":{"Metric":{"Value":25.0,"Unit":"C","UnitType":17},"Imperial":{"Value":77.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T06:55:00-04:00","EpochTime":1674816900,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":25.0,"Unit":"C","UnitType":17},"Imperial":{"Value":77.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"},{"LocalObservationDateTime":"2023-01-27T05:55:00-04:00","EpochTime":1674813300,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":25.1,"Unit":"C","UnitType":17},"Imperial":{"Value":77.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"}]'
+  recorded_at: Sat, 28 Jan 2023 09:07:13 GMT
+recorded_with: VCR 6.1.0

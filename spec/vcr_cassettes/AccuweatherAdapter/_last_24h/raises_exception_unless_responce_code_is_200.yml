@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dataservice.accuweather.com/currentconditions/v1/0/historical/24?apikey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - ruby-client
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 28 Jan 2023 09:10:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '107'
+      Connection:
+      - keep-alive
+      Server:
+      - Microsoft-IIS/10.0
+      Ratelimit-Limit:
+      - '50'
+      Ratelimit-Remaining:
+      - '49'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Headers:
+      - Accept,Origin,Content-Type
+      Access-Control-Max-Age:
+      - '1209600'
+      Cache-Control:
+      - public, max-age=0
+      Expires:
+      - Sat, 28 Jan 2023 09:10:44 GMT
+      Akamai-Grn:
+      - 0.4fab3717.1674897044.1f999bf
+    body:
+      encoding: UTF-8
+      string: '{"Code":"400","Message":"Invalid location key: 0","Reference":"/currentconditions/v1/0/historical/24.json"}'
+  recorded_at: Sat, 28 Jan 2023 09:10:45 GMT
+recorded_with: VCR 6.1.0

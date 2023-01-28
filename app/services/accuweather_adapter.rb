@@ -9,8 +9,8 @@ class AccuweatherAdapter
         {
           location: location,
           time: data['EpochTime'],
-          unit: data.dig('Temperature', 'Metric', 'Unit'),
-          value: data.dig('Temperature', 'Metric', 'Value')
+          value: data.dig('Temperature', 'Metric', 'Value'),
+          unit: data.dig('Temperature', 'Metric', 'Unit')
         }
       end
     end
@@ -22,8 +22,8 @@ class AccuweatherAdapter
         {
           location: location,
           time: data['EpochTime'],
-          unit: data.dig('Temperature', 'Metric', 'Unit'),
-          value: data.dig('Temperature', 'Metric', 'Value')
+          value: data.dig('Temperature', 'Metric', 'Value'),
+          unit: data.dig('Temperature', 'Metric', 'Unit')
         }
       end
     end
@@ -46,15 +46,8 @@ class AccuweatherAdapter
     end
 
     def request_remote(path)
-      begin
-        response = connection.get path, { apikey: ENV.fetch('ACCUWEATHER_API_KEY', nil) }
-      rescue StandardError => e
-        message = e.is_a?(Faraday::ClientError) ? 'Accuweather service error' : 'Accuweather service unavailable'
-        raise DataNotAvailableError, message
-      end
+      response = connection.get path, { apikey: ENV.fetch('ACCUWEATHER_API_KEY', nil) }
       JSON.parse response.body
     end
   end
-
-  class DataNotAvailableError < RuntimeError; end
 end

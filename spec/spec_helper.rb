@@ -92,4 +92,12 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
   require 'webmock/rspec'
+  require 'vcr'
+
+  VCR.configure do |cfg|
+    cfg.cassette_library_dir = 'spec/vcr_cassettes'
+    cfg.hook_into :webmock
+    cfg.filter_sensitive_data('<API_KEY>') { ENV.fetch('ACCUWEATHER_API_KEY', nil) }
+    cfg.configure_rspec_metadata!
+  end
 end

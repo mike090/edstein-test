@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'English'
 class AccuweatherFetchService
   class << self
     def call(location)
@@ -8,6 +9,8 @@ class AccuweatherFetchService
         record = TemperatureInfo.new(t)
         record.save
       end
+    rescue StandardError => e
+      Rails.logger.error ['Error during data fetching: ', e.message, e.backtrace].join('\n')
     end
   end
 end

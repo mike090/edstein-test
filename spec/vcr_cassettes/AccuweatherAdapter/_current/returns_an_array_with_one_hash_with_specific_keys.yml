@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dataservice.accuweather.com/currentconditions/v1/123?apikey=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - ruby-client
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 28 Jan 2023 09:05:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '490'
+      Connection:
+      - keep-alive
+      Server:
+      - Microsoft-IIS/10.0
+      Ratelimit-Limit:
+      - '50'
+      Ratelimit-Remaining:
+      - '42'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept
+      Access-Control-Max-Age:
+      - '3628800'
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=600
+      Expires:
+      - Sat, 28 Jan 2023 09:15:45 GMT
+      Akamai-Grn:
+      - 0.0e9eca17.1674896745.80f8d01
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - deflate;q=0.6
+      - gzip;q=1.0
+      - identity;q=0.3
+      Host:
+      - api.accuweather.com
+      User-Agent:
+      - ruby-client
+      X-Forwarded-For:
+      - 109.127.184.96
+      X-Forwarded-Port:
+      - '80'
+      X-Forwarded-Proto:
+      - http
+    body:
+      encoding: UTF-8
+      string: '[{"LocalObservationDateTime":"2023-01-28T04:55:00-04:00","EpochTime":1674896100,"WeatherText":"Partly
+        cloudy","WeatherIcon":35,"HasPrecipitation":false,"PrecipitationType":null,"IsDayTime":false,"Temperature":{"Metric":{"Value":25.0,"Unit":"C","UnitType":17},"Imperial":{"Value":77.0,"Unit":"F","UnitType":18}},"MobileLink":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us","Link":"http://www.accuweather.com/en/aw/camacuri/121/current-weather/121?lang=en-us"}]'
+  recorded_at: Sat, 28 Jan 2023 09:05:45 GMT
+recorded_with: VCR 6.1.0
