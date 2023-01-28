@@ -37,6 +37,7 @@ module Core
 
         avg = data.sum(&:value) / data.count
         {
+          location: location,
           from: Time.zone.at(data.first.time),
           to: Time.zone.at(data.last.time),
           avg_value: avg.round(1),

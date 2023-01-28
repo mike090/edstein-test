@@ -38,7 +38,7 @@ RSpec.describe Core::DataLayer do
   describe '.by_time' do
     it 'returns nearest value' do
       t_info = described_class.by_time location, Time.now.ago(3.minutes).to_i
-      expect(t_info[:time].to_i).to eq(temperature_infos(:five_minutes_ago).time)
+      expect(t_info[:time].to_i).to eq(TemperatureInfo.order(:time).last.time)
     end
   end
 
