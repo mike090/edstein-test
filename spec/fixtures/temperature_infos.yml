@@ -1,6 +1,5 @@
 DEFAULTS: &DEFAULTS
   location: <%= ENV['LOCATION_KEY'] %>
-  unit: C
 
 max_value:
   <<: *DEFAULTS

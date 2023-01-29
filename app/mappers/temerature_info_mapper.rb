@@ -5,7 +5,11 @@ class TemeratureInfoMapper < Dry::Transformer::Pipe
 
   define! do
     symbolize_keys
-    accept_keys %i[location time value unit]
+    accept_keys %i[location time value]
     map_value :time, ->(time) { Time.at time }
+  end
+
+  def call(input, **extra)
+    super(input).merge extra
   end
 end

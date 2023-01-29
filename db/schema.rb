@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_24_055529) do
+ActiveRecord::Schema.define(version: 2023_01_29_123805) do
 
   create_table "temperature_infos", force: :cascade do |t|
     t.integer "location", null: false
     t.integer "time", null: false
     t.float "value", null: false
-    t.string "unit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["location", "time"], name: "by_location_time", unique: true

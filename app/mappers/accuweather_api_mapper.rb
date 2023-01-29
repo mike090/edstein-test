@@ -7,8 +7,7 @@ class AccuweatherApiMapper < Dry::Transformer::Pipe
     map_array lambda { |t_info|
       {
         time: t_info['EpochTime'],
-        value: t_info.dig('Temperature', 'Metric', 'Value'),
-        unit: t_info.dig('Temperature', 'Metric', 'Unit')
+        value: t_info.dig('Temperature', 'Metric', 'Value')
       }
     }
   end

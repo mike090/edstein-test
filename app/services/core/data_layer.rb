@@ -5,14 +5,14 @@ module Core
     class << self
       def last_24h_max(location)
         t_info = TemperatureInfo.by_location(location).ago(24.hours).order(:value).last
-        return TemeratureInfoMapper.new.call(t_info.attributes) if t_info
+        return TemeratureInfoMapper.new.call(t_info.attributes, unit: 'C') if t_info
 
         raise DataNotAvailableError, 'Data not available'
       end
 
       def last_24h_min(location)
         t_info = TemperatureInfo.by_location(location).ago(24.hours).order(:value).first
-        return TemeratureInfoMapper.new.call(t_info.attributes) if t_info
+        return TemeratureInfoMapper.new.call(t_info.attributes, unit: 'C') if t_info
 
         raise DataNotAvailableError, 'Data not available'
       end
@@ -39,7 +39,7 @@ module Core
         raise DataNotAvailableError, 'Data not available' if data.empty?
 
         t_info = data.min { |item1, item2| (item1.time - time).abs <=> (item2.time - time).abs }
-        TemeratureInfoMapper.new.call(t_info.attributes)
+        TemeratureInfoMapper.new.call(t_info.attributes, unit: 'C')
       end
 
       def current(location)
