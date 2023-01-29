@@ -5,41 +5,27 @@ module Core
     class << self
       def last_24h_max(location)
         t_info = TemperatureInfo.by_location(location).ago(24.hours).order(:value).last
-        if t_info
-          return {
-            location: t_info.location,
-            time: Time.zone.at(t_info.time),
-            value: t_info.value,
-            unit: t_info.unit
-          }
-        end
+        return TemeratureInfoMapper.new.call(t_info.attributes) if t_info
 
         raise DataNotAvailableError, 'Data not available'
       end
 
       def last_24h_min(location)
         t_info = TemperatureInfo.by_location(location).ago(24.hours).order(:value).first
-        if t_info
-          return {
-            location: t_info.location,
-            time: Time.zone.at(t_info.time),
-            value: t_info.value,
-            unit: t_info.unit
-          }
-        end
+        return TemeratureInfoMapper.new.call(t_info.attributes) if t_info
 
         raise DataNotAvailableError, 'Data not available'
       end
 
       def last_24h_avg(location)
-        data = TemperatureInfo.by_location(location).ago(24.hours).order(:time)
+        data = TemperatureInfo.by_location(location).ago(24.hours)
         raise DataNotAvailableError, 'Data not available' if data.empty?
 
         avg = data.sum(&:value) / data.count
         {
           location: location,
           from: Time.zone.at(data.first.time),
-          to: Time.zone.at(data.last.time),
+          to: Time.at(data.last.time),
           avg_value: avg.round(1),
           unit: 'C'
         }
@@ -53,12 +39,7 @@ module Core
         raise DataNotAvailableError, 'Data not available' if data.empty?
 
         t_info = data.min { |item1, item2| (item1.time - time).abs <=> (item2.time - time).abs }
-        {
-          location: t_info.location,
-          time: Time.zone.at(t_info.time),
-          value: t_info.value,
-          unit: t_info.unit
-        }
+        TemeratureInfoMapper.new.call(t_info.attributes)
       end
 
       def current(location)
@@ -66,14 +47,14 @@ module Core
       end
 
       def last_24h(location)
-        start = Time.zone.now.beginning_of_hour
+        start = Time.now.beginning_of_hour
         hours = (0..23).map { |i| (start.ago i.hours).to_i }
         hours.map do |time|
           by_time location, time
         rescue DataNotAvailableError
           {
             location: location,
-            time: Time.zone.at(time),
+            time: Time.at(time),
             value: nil,
             unit: 'C'
           }

@@ -50,3 +50,6 @@ Metrics/ParameterLists:
 
 Lint/RedundantDirGlobSort:
   Enabled: false
+
+Rails/TimeZone:
+  Enabled: false

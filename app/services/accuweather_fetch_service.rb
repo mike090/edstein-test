@@ -6,6 +6,7 @@ class AccuweatherFetchService
     def call(location)
       data = AccuweatherAdapter.last_24h(location)
       data.each do |t|
+        t.merge location: location
         record = TemperatureInfo.new(t)
         record.save
       end

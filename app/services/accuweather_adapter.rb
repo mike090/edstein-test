@@ -5,27 +5,13 @@ class AccuweatherAdapter
     def current(location)
       path = "currentconditions/v1/#{location}"
       raw = request_remote path
-      raw.map do |data|
-        {
-          location: location,
-          time: data['EpochTime'],
-          value: data.dig('Temperature', 'Metric', 'Value'),
-          unit: data.dig('Temperature', 'Metric', 'Unit')
-        }
-      end
+      AccuweatherApiMapper.new.call(raw)
     end
 
     def last_24h(location)
       path = "currentconditions/v1/#{location}/historical/24"
       raw = request_remote path
-      raw.map do |data|
-        {
-          location: location,
-          time: data['EpochTime'],
-          value: data.dig('Temperature', 'Metric', 'Value'),
-          unit: data.dig('Temperature', 'Metric', 'Unit')
-        }
-      end
+      AccuweatherApiMapper.new.call(raw)
     end
 
     private

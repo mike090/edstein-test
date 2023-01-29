@@ -51,7 +51,7 @@ RSpec.describe Core::DataLayer do
     it 'returned items times are nearest for beginning of hour' do
       data = described_class.last_24h location
       data.each do |i|
-        min = Time.zone.at(i[:time]).min
+        min = Time.at(i[:time]).min
         expect(min < 10 || min > 50).to be_truthy
       end
     end

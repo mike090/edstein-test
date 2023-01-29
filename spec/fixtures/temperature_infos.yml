@@ -4,40 +4,40 @@ DEFAULTS: &DEFAULTS
 
 max_value:
   <<: *DEFAULTS
-  time: <%= (Time.zone.now.ago 3.hours).to_i %>
+  time: <%= (Time.now.ago 3.hours).to_i %>
   value: 28
 
 min_value:
   <<: *DEFAULTS
-  time:  <%= (Time.zone.now.ago 18.minutes).to_i %>
+  time:  <%= (Time.now.ago 18.minutes).to_i %>
   value: 0
 
 yesterday_1:
   <<: *DEFAULTS
-  time:  <%= (Time.zone.now.ago 25.hours).to_i %>
+  time:  <%= (Time.now.ago 25.hours).to_i %>
   value: 23
 
 ten_minutes_ago:
   <<: *DEFAULTS
-  time: <%= (Time.zone.now.ago 10.minutes).to_i %>
+  time: <%= (Time.now.ago 10.minutes).to_i %>
   value: 25
 
 five_minutes_ago:
   <<: *DEFAULTS
-  time: <%= (Time.zone.now.ago 5.minutes).to_i %>
+  time: <%= (Time.now.ago 5.minutes).to_i %>
   value: 24
 
 hourly1:
   <<: *DEFAULTS
-  time: <%= Time.zone.now.beginning_of_hour.ago(182.minutes).to_i %>
+  time: <%= Time.now.beginning_of_hour.ago(182.minutes).to_i %>
   value: 15
 
 hourly2:
   <<: *DEFAULTS
-  time: <%= Time.zone.now.beginning_of_hour.ago(119.minutes).to_i %>
+  time: <%= Time.now.beginning_of_hour.ago(119.minutes).to_i %>
   value: 15
 
 hourly3:
   <<: *DEFAULTS
-  time: <%= Time.zone.now.beginning_of_hour.ago(1.minutes).to_i %>
+  time: <%= Time.now.beginning_of_hour.ago(1.minutes).to_i %>
   value: 15
