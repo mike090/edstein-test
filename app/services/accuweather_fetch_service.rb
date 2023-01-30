@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-require 'English'
 class AccuweatherFetchService
   class << self
     def call(location)
       data = AccuweatherAdapter.last_24h(location)
       data.each do |t|
-        t.merge! location: location
+        t[:location] = location
         record = TemperatureInfo.new(t)
         record.save
       end
