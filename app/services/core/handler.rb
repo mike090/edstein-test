@@ -4,6 +4,7 @@ module Core
   module Handler
     def plug_on(successor)
       @successor = successor
+      self
     end
 
     def handle(msg, *args)
